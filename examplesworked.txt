@@ -1,0 +1,69 @@
+3.1,3.2
+
+Research
+
+data replication, data availability, large scale scaling, segment tree
+
+Javascript algorithm complexities for language specific knowledge examinations
+
+
+The best tip I ever got - Always review your code before you say 'I am done'. Walk through code, see that you have covered all the edge cases and say you are done when you are done.
+
+How would I implement the autocomplete function on an iPhone or Google search?
+
+Two Phone Interviews, mostly about data structures and Algorithms. 1St interview they asked string manipulation questions and a Puzzle. In 2nd Interview they asked about Tri-Tree implementation. They asked me to implement tri-tree in a google document. Implementation in a google document was a bit confusing and tricky.
+
+You and opponent alternate picking gold pots out of line. You can pick either from the left or the right. All amounts of gold in all pots are know. Write an algorithm to pick the most gold. Assume you opponent is using the same algorithm.
+
+ I received 2 different dynamic programming problems which I didn't expect and I found to be quite difficult. 3 of the interviewers had me do whiteboard work but only 1 of them actually had me do any coding, which was a basic singly linked list type problem. 
+
+ On-site 5 hour interview. Goes well. My best advice here is to buy a whiteboard
+
+  can't go into details about the problems. But I wish I had studied my graph algorithms a little more closely.
+
+  Make sure you know your big-O algorithm classifications. Almost every interviewer asked me something to do with that
+
+
+  Here are a few links that were helpful:
+http://www.youtube.com/lifeatgoogle
+http://www.google.com/support/jobs/bin/static.py?page=gettingintogoogle.html
+http://stackoverflow.com/search?q=google+interview
+http://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html
+https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
+
+And some books that I found helpful:
+ - Cracking the Coding Interview by Gayle Laakmann (http://www.valleytalk.org/wp-content/uploads/2012/10/CrackCode.pdf)
+ - The Algorithm Design Manual by Steven S. Skiena (http://cad6.csie.fju.edu.tw/ecp100/Books/Springer.The%20Algorithm%20Design%20Manual.pdf)
+ - Programming Interviews Exposed: Secrets to Landing Your Next Job by John Mongan and Noah Suojanen (Sorry don't have a link handy)
+ - Programming Pearls by Jon Bentley (Again, no link. I imagine Amazon or Barnes & Noble would be a good bet)
+ - Cormen/Leiserson/Rivest/Stein: Introduction to Algorithms
+
+
+ They asked about servers and how networks functioned and I have no background with that topic
+
+ What type of queries/use cases would a column-oriented database be most useful for
+
+
+ Data structures and algorithms are a must. The most complicated algorithm one would use in these sorts of interviews might be Dijkstra's (all of my questions were simpler though). Get used to coding on a whiteboard and be sure to understand the problem fully before jumping into the code. Bring thin-chisel markers, especially if you anticipate writing a couple of long lines of code
+
+ (1) I have a linked-list and a node has a digit.
+For example, 1->2->4->6->8.
+1 is a head and 8 is a tail.
+It means the number 12,468.
+I want to add 1.
+Then, it should be 1->2->4->6->9.
+Implement it.
+what is the time complexity.
+
+(2) explain abstract and interface.
+what are they different?
+give me an example.
+
+(3) Bill has a fifty billion dollar.
+you have a dollar.
+your money become 2 times larger than a year before. (ex: 1->2->4->8->...)
+How long year does it take that yours is more than Bill's.
+give me an answer without calculator.
+
+
+http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
