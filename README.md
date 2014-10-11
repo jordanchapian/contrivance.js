@@ -25,5 +25,4 @@ Heap,
 Stack,
 Queue,
 Balanced Binary Search Tree,
-Trie
 
