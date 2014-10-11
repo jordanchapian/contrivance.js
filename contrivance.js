@@ -4,6 +4,20 @@
 		structure:{},
 		sort:{}
 	};
+	///////////////////////////////
+	///////GENERAL UTILITIES///////
+	///////////////////////////////
+
+	//In-Place Swap
+	(function(){
+
+		co.util.swap = function(a, x, y){
+			var tmp = a[x];
+			a[x] = a[y];
+			a[y] = tmp;
+		}
+
+	})();
 
 	/////////////////////////////
 	///////DATA STRUCTURES///////
@@ -90,19 +104,15 @@
 
 	})();
 	
-
-	
-
-	
-
 	////////////////////////////////
 	///////SORTING ALGORITHMS///////
 	////////////////////////////////
 
 	// BUBBLE SORT
-		//Worst   : O(n^2)
-		//Best    : O(n)
-		//Average : O(n^2)
+		//Worst       : O(n^2)
+		//Best        : O(n)
+		//Average     : O(n^2)
+		//Aux Memory  : O(1)
 
 	(function(){
 		co.sort.BubbleSort = function(a, accessor, comparator){
@@ -113,9 +123,7 @@
 				sorted = 1; //assume
 				for(var i = 0; i < (a.length - 1); i++){
 					if(a[i] > a[i+1]){
-						var tmp = a[i];
-						a[i] = a[i + 1];
-						a[i+1] = tmp;
+						co.util.swap(a, i, (i+1));
 						sorted = 0;
 					}
 				}
@@ -126,9 +134,10 @@
 	})();
 
 	//SELECTION SORT
-		//Worst   : O(n^2)
-		//Best    : O(n^2)
-		//Average : O(n^2)
+		//Worst       : O(n^2)
+		//Best        : O(n^2)
+		//Average     : O(n^2)
+		//Aux Memory  : O(1)
 
 	(function(){
 		co.sort.SelectionSort = function(a, accessor, comparator){
@@ -141,9 +150,7 @@
 				}
 				//perform swap
 				if(i != smallest){
-					var tmp = a[smallest];
-					a[smallest] = a[i];
-					a[i] = tmp;
+					co.util.swap(a, smallest, i);
 				}
 			}
 
@@ -152,9 +159,10 @@
 	})();
 
 	// MERGE SORT
-		//Worst   : O(nlog(n))
-		//Best    : O(nlog(n))
-		//Average : O(nlog(n))
+		//Worst       : O(nlog(n))
+		//Best        : O(nlog(n))
+		//Average     : O(nlog(n))
+		//Aux Memory  : O(n)
 
 	(function(){
 
@@ -208,5 +216,66 @@
 
 	})();
 
+	//QUICK SORT
+		//Worst       : O(n^2)
+		//Best        : O(nlog(n))
+		//Average     : O(nlog(n))
+		//Aux Memory  : O(n)
+
+	(function(){
+
+		var QuickSort = function(a, left, right, accessor){
+			var index = partition(a, left, right); //will be our pivot point
+
+			if(left < (index - 1)){//sort left
+				QuickSort(a, 0, (index - 1), accessor);
+			}
+			if(right > index){//sort right
+				QuickSort(a, index, right, accessor);
+			}
+		}
+
+		var partition = function(a, left, right){
+			var pivot = a[Math.floor((left + right) / 2)];
+
+			while(left <= right){ 
+				//find left elements that should be to the right of the pivot
+				while(a[left] < pivot)left++;
+				//find left elements that should be to the left of the pivot
+				while(a[right] > pivot)right--;
+
+				//perform the swap, if our condition has not been breached
+				if(left <= right){
+					co.util.swap(a, left, right);
+					left++;
+					right--;
+				}
+			}
+
+			return left;
+		}
+
+		co.sort.QuickSort = function(a, accessor){
+			if(!accessor) accessor = function(e){return e;}
+			QuickSort(a, 0, (a.length - 1), accessor);
+
+			return a;
+		}
+
+	})();
+
+	//////////////////////////////////
+	///////SEARCHING ALGORITHMS///////
+	//////////////////////////////////
+
+	//Binary Search
+		//Worst       : O(nlog(n))
+		//Best        : O(1)
+		//Average     : O(nlog(n))
+		//Aux Memory  : O(n)
+		
+	(function(){
+
+	})();
 
 })();
