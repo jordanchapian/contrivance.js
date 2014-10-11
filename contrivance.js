@@ -3,7 +3,7 @@
 		util:{},
 		structure:{},
 		sort:{}
-	}
+	};
 
 	/////////////////////////////
 	///////DATA STRUCTURES///////
@@ -151,13 +151,16 @@
 		}
 	})();
 
-	// MergeSort
+	// MERGE SORT
+		//Worst   : O(nlog(n))
+		//Best    : O(nlog(n))
+		//Average : O(nlog(n))
+
 	(function(){
 
 		var MergeSort = function(a, helper, low, high, accessor){
 			if(low < high){
 				var middle = Math.floor((high + low) / 2);
-				console.log(low, middle, high)
 				//sort left
 				MergeSort(a, helper, low, middle, accessor);
 				//sort right
