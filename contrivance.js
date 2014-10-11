@@ -1,5 +1,8 @@
 (function(){
-
+	window.co = {
+		util:{},
+		structure:{}
+	}
 	var TreeNode = function(value, parent){
 		this.val = value;
 		this.parent = parent;
@@ -10,7 +13,7 @@
 		}
 	}
 
-	window.Stack = function Stack(){
+	co.Stack = function Stack(){
 		var _stack = [];
 		this.push = function(e){
 			_stack = [e].concat(_stack);
@@ -28,7 +31,7 @@
 		}
 	}
 
-	window.Queue = function Queue(){
+	co.Queue = function Queue(){
 		var _queue = [];
 
 		this.push = function(e){
@@ -47,7 +50,7 @@
 		}
 	}
 
-	window.BinarySearchTree = function(){
+	co.BinarySearchTree = function(){
 		var root = this.root = new TreeNode(undefined);
 
 		this.push = function(value){
@@ -66,4 +69,44 @@
 		}
 	}
 
+
+
+	co.sort = {
+		BubbleSort: function(a, accessor, comparator){
+			if(!accessor) accessor = function(e){return e;}
+			var sorted = 0;
+
+			while(!sorted){
+				sorted = 1; //assume
+				for(var i = 0; i < (a.length - 1); i++){
+					if(a[i] > a[i+1]){
+						var tmp = a[i];
+						a[i] = a[i + 1];
+						a[i+1] = tmp;
+						sorted = 0;
+					}
+				}
+			}
+
+			return a;
+		},
+		SelectionSort: function(a, accessor, comparator){
+			if(!accessor) accessor = function(e){return e;}
+
+			for(var i = 0; i < a.length; i++){
+				var smallest = i;
+				for(var j=(i + 1); j < a.length; j++){
+					if(a[smallest] > a[j]) smallest = j;
+				}
+				//perform swap
+				if(i != smallest){
+					var tmp = a[smallest];
+					a[smallest] = a[i];
+					a[i] = tmp;
+				}
+			}
+
+			return a;
+		}
+	}
 })();
